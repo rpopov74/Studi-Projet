@@ -5,6 +5,7 @@ provider "registry.terraform.io/terraform-provider-openstack/openstack" {
   version     = "1.52.1"
   constraints = "~> 1.52.1"
   hashes = [
+    "h1:tzawotEtjBcVWnzA+wAqcbkxW7XnJCfXqod4SBts9vI=",
     "h1:yhED1rCRd7TSqnQmOUb2wiYpQP5EnhUtu3enrcf60K8=",
     "zh:037f7ab5a0942daee00d23402e7ccab472380864e13013284910fa7841a6e37c",
     "zh:52ac973e6c5cd584c5086494218e9b49d93217f5fbc34fc76fa8a9ddd635447a",

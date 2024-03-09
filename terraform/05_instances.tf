@@ -14,7 +14,7 @@ resource "openstack_compute_instance_v2" "openvpn" {
   flavor_name     = var.instance_flavor_name
   metadata        = var.metadatas
   security_groups = [openstack_networking_secgroup_v2.openvpn.name, openstack_networking_secgroup_v2.ssh.name, "default"]
-  key_pair        = openstack_compute_keypair_v2.ssh_public_key.name
+  key_pair        = openstack_compute_keypair_v2.ssh_public_key_popov.name
   network {
     name = var.network_internal_dev
   }

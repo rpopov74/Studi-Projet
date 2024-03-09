@@ -1,0 +1,10 @@
+---
+# tasks file for roles/openvpn
+
+- name: create a file in /root/
+  file:
+    path: /root/toto.txt
+    state: touch
+    owner: root
+    group: root
+    mode: 0750
