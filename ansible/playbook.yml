@@ -2,5 +2,6 @@
   hosts: openvpn
   become: true
   roles:
-    - openvpn
+    - openvpn_server
+    - openvpn_client
     

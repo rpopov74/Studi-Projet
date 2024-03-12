@@ -6,3 +6,6 @@ vpn_key_city: "Paris"
 vpn_key_org: "popov"
 vpn_key_email: "megevand.alexis@gmail.com"
 vpn_key_ou: "po"
+vpn_user_list:
+  - popov
+vpn_destination_key: "/tmp/"
