@@ -12,16 +12,16 @@ resource "null_resource" "openvpn_server" {
       rm -f /tmp/openvpn.ini;
     EOT
   }
-    depends_on = [openstack_compute_instance_v2.openvpn,openstack_networking_floatingip_v2.floatip_1,openstack_compute_floatingip_associate_v2.fip_assoc]
+  depends_on = [openstack_compute_instance_v2.openvpn, openstack_networking_floatingip_v2.floatip_1, openstack_compute_floatingip_associate_v2.fip_assoc]
 }
 
 resource "null_resource" "create_new_vpn_client" {
   for_each = toset(var.vpn_user_list)
-    triggers = {
-      name = each.value
-      always_run = timestamp()
-    }
-  
+  triggers = {
+    name       = each.value
+    always_run = timestamp()
+  }
+
   provisioner "local-exec" {
     command = <<-EOT
       echo > /tmp/openvpn.ini;
@@ -31,5 +31,5 @@ resource "null_resource" "create_new_vpn_client" {
       rm -f /tmp/openvpn.ini;
     EOT
   }
-  depends_on = [openstack_compute_instance_v2.openvpn,null_resource.openvpn_server,openstack_networking_floatingip_v2.floatip_1,openstack_compute_floatingip_associate_v2.fip_assoc]
+  depends_on = [openstack_compute_instance_v2.openvpn, null_resource.openvpn_server, openstack_networking_floatingip_v2.floatip_1, openstack_compute_floatingip_associate_v2.fip_assoc]
 }

@@ -51,6 +51,6 @@ variable "metadatas" {
 }
 
 variable "vpn_user_list" {
-  type = list(any)
-  default = [ "popov" ]
+  type    = list(any)
+  default = ["popov"]
 }

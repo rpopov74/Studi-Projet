@@ -10,11 +10,11 @@ resource "openstack_networking_network_v2" "network_internal" {
 }
 
 resource "openstack_networking_subnet_v2" "network_subnet" {
-  name        = var.network_internal_dev
-  network_id  = openstack_networking_network_v2.network_internal.id
-  cidr        = var.network_subnet_cidr
-  ip_version  = 4
-  enable_dhcp = true
+  name            = var.network_internal_dev
+  network_id      = openstack_networking_network_v2.network_internal.id
+  cidr            = var.network_subnet_cidr
+  ip_version      = 4
+  enable_dhcp     = true
   dns_nameservers = ["1.1.1.1", "8.8.8.8"]
 }
 
